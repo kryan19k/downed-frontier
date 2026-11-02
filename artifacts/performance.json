@@ -1,0 +1,20 @@
+{
+  "kind": "accelerated headless simulation; not a live network or browser load test",
+  "node": "v24.19.0",
+  "platform": "linux",
+  "arch": "x64",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "seed": 70823,
+  "colonies": 4,
+  "colonists": 12,
+  "ticks": 36000,
+  "simulatedSeconds": 3600,
+  "wallMilliseconds": 10141,
+  "tickMilliseconds": {
+    "p50": 0.0119,
+    "p95": 1.7286,
+    "p99": 2.1393,
+    "max": 11.4946
+  },
+  "invariants": "nonnegative integer inventory, valid positions, no orphan reservations"
+}

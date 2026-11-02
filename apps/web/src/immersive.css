@@ -1,0 +1,1140 @@
+/* Tidelight: world-first floating command interface. */
+.immersive {
+  --paper: #122b2cf2;
+  --ink: #ece5cd;
+  --muted: #adbaa9;
+  --line: #b9a66c30;
+  --teal: #d8bd82;
+  color: var(--ink);
+  background: #102c30;
+  min-height: 0;
+}
+.immersive .workspace,
+.immersive .game-main {
+  position: absolute;
+  inset: 0;
+  display: block;
+  min-width: 0;
+  margin: 0;
+}
+.immersive .world-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+.immersive .world-stage:after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 160px 25px #07161588;
+}
+.immersive .topbar {
+  position: fixed;
+  top: 18px;
+  left: 22px;
+  right: 22px;
+  z-index: 20;
+  height: 52px;
+  background: none;
+  border: 0;
+  padding: 0;
+  pointer-events: none;
+}
+.immersive .topbar > * {
+  pointer-events: auto;
+}
+.immersive .brand {
+  padding: 9px 16px 9px 10px;
+  border: 1px solid #d6bb7855;
+  border-radius: 5px;
+  background: linear-gradient(110deg, #0b2123ed, #0c2523d6);
+  box-shadow: 0 8px 25px #0004;
+}
+.immersive .brand strong {
+  font-size: 23px;
+  color: #f0e7cc;
+}
+.immersive .brand small {
+  color: #b7b698;
+  letter-spacing: 2px;
+  font-size: 7px;
+}
+.immersive .brand-mark {
+  border: 0;
+  background: none;
+  color: #d7bb7e;
+}
+.immersive .world-badge {
+  display: none;
+}
+.immersive .top-actions {
+  margin-left: auto;
+  padding: 8px 10px;
+  background: #0c2225dd;
+  border: 1px solid #cfb77944;
+  border-radius: 5px;
+  color: #e9dfbf;
+}
+.immersive .connection {
+  color: #b3c8b1;
+  font-size: 8px;
+}
+.immersive .captain-avatar {
+  background: #23433c;
+  color: #ddc78e;
+  border-color: #9a956655;
+}
+.immersive .resourcebar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 21;
+  height: 48px;
+  width: auto;
+  min-height: 0;
+  padding: 0 12px;
+  border: 1px solid #cbb07277;
+  background: linear-gradient(#193531f2, #0b2024ef);
+  border-radius: 7px;
+  box-shadow: 0 8px 30px #0004;
+  gap: 0;
+}
+.immersive .resource-items {
+  gap: 0;
+}
+.immersive .resource {
+  padding: 0 13px;
+  min-width: 76px;
+  border-right: 1px solid #bdaf7033;
+  gap: 8px;
+}
+.immersive .resource:last-child {
+  border: 0;
+}
+.immersive .resource b {
+  color: #f5e8c3;
+  font-size: 15px;
+}
+.immersive .resource small {
+  font-size: 8px;
+  color: #a4b5a5;
+}
+.immersive .resource > svg {
+  color: #d2b77c;
+  width: 16px;
+}
+.immersive .resourcebar .outpost-label,
+.immersive .world-clock {
+  display: none;
+}
+.immersive .map-heading {
+  position: fixed;
+  top: 88px;
+  left: 24px;
+  z-index: 4;
+  padding: 0;
+  border: 0;
+  background: none;
+  height: auto;
+  pointer-events: none;
+}
+.immersive .map-heading h1 {
+  font-size: 30px;
+  color: #eee6ca;
+  text-shadow: 0 2px 12px #000;
+}
+.immersive .map-heading p {
+  color: #c3cdbb;
+  font-size: 10px;
+  text-shadow: 0 1px 4px #000;
+}
+.immersive .map-heading .eyebrow {
+  color: #c7b37b;
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+.immersive .map-heading-actions {
+  pointer-events: auto;
+  margin-left: 20px;
+}
+.immersive .map-toggle {
+  background: #102a28dd;
+  border: 1px solid #cfba7944;
+  color: #dfcc9a;
+}
+.immersive .rail {
+  position: fixed;
+  left: 20px;
+  top: 210px;
+  bottom: auto;
+  width: 52px;
+  z-index: 12;
+  background: #0a2225de;
+  border: 1px solid #bca56c66;
+  border-radius: 7px;
+  padding: 8px 0;
+  box-shadow: 0 10px 30px #0004;
+  gap: 0;
+}
+.immersive .rail button {
+  width: 42px;
+  height: 48px;
+  margin: 1px 4px;
+  color: #c0cbb6;
+  border-radius: 4px;
+}
+.immersive .rail button span {
+  font-size: 7px;
+}
+.immersive .rail button.active {
+  background: #8b815e44;
+  color: #ffe4a0;
+}
+.immersive .rail-coordinate {
+  display: none;
+}
+.immersive .rail > div:last-child {
+  border-top: 1px solid #ac9c6744;
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.immersive .construction-bar {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  width: max-content;
+  max-width: calc(100vw - 430px);
+  height: 80px;
+  padding: 7px 12px;
+  background: linear-gradient(#163332ee, #0a1e22f5);
+  border: 1px solid #d4b372aa;
+  border-radius: 7px;
+  box-shadow: 0 8px 40px #0008;
+}
+.immersive .toolbar-label {
+  display: none;
+}
+.immersive .build-options {
+  gap: 4px;
+}
+.immersive .build-option {
+  width: 65px;
+  height: 62px;
+  border: 1px solid transparent;
+  color: #e7dbb5;
+}
+.immersive .build-option:hover,
+.immersive .build-option.selected {
+  border-color: #d6b778;
+  background: #b89d5826;
+  box-shadow: inset 0 0 15px #b49c4f1a;
+}
+.immersive .build-symbol {
+  color: #e0bd76;
+  font-size: 25px;
+}
+.immersive .build-name {
+  font-size: 8px;
+}
+.immersive .build-key {
+  color: #abbb9c;
+}
+.immersive .cancel-tool {
+  color: #d0bd8d;
+}
+.immersive .region-legend {
+  color: #e2d7b5;
+}
+.immersive .chart-stamp {
+  display: none;
+}
+.immersive .statusbar {
+  position: fixed;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 18px;
+  width: auto;
+  z-index: 5;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #c3ceb4;
+  white-space: nowrap;
+}
+.immersive .statusbar > span:nth-child(2) {
+  display: none;
+}
+.immersive .inspector {
+  position: fixed;
+  right: 20px;
+  top: 135px;
+  bottom: 30px;
+  z-index: 16;
+  width: 310px;
+  min-width: 0;
+  border: 1px solid #bd9e62aa;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #1b3632f5, #0c2025f5);
+  box-shadow: 0 15px 50px #0007;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition:
+    transform 0.22s,
+    opacity 0.22s;
+}
+.immersive.panel-closed .inspector {
+  transform: translateX(360px);
+  opacity: 0;
+  pointer-events: none;
+}
+.immersive .inspector-toggle {
+  position: fixed;
+  z-index: 22;
+  right: 20px;
+  top: 90px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #bc9e62aa;
+  background: #102a28e8;
+  padding: 10px 13px;
+  border-radius: 4px;
+  color: #e4d5ab;
+  font-size: 11px;
+  box-shadow: 0 5px 18px #0004;
+}
+.inspector-toggle kbd {
+  font-size: 9px;
+  opacity: 0.6;
+  border: 1px solid #bba66c55;
+  padding: 2px 4px;
+}
+.immersive .inspector h2,
+.immersive .inspector h3,
+.immersive .crew-row-info strong,
+.immersive .section-title h3,
+.immersive .neighbor strong,
+.immersive .current-task strong {
+  color: #f0e4c4;
+}
+.immersive .inspector p,
+.immersive .inspector small,
+.immersive .inspector .site-stats span,
+.immersive .inspector .need > span {
+  color: #adbfad;
+}
+.immersive .inspector .eyebrow,
+.immersive .inspector .site-list-heading {
+  color: #ccb77e;
+}
+.immersive .inspector-tabs > button {
+  color: #c3cdb5;
+}
+.immersive .inspector-tabs > button.selected {
+  color: #f5d692;
+}
+.immersive .inspector-scroll {
+  padding-bottom: 18px;
+}
+.immersive .inspector-footer {
+  background: #102625;
+  border-color: #bda36344;
+  color: #adbda8;
+}
+.immersive .production-card,
+.immersive .objectives-card,
+.immersive .current-task,
+.immersive .offer,
+.immersive .crew-detail,
+.immersive .site-owner {
+  background: #27413888;
+  border-color: #b6a06444;
+  color: #ded5b7;
+}
+.immersive .objective-action,
+.immersive .light-button {
+  background: #284b3e;
+  color: #e5cb8e;
+  border-color: #b7a36755;
+}
+.immersive .primary-button {
+  background: linear-gradient(#b89c5c, #8d7544);
+  color: #fff3d3;
+  border: 1px solid #e8c77d77;
+}
+.immersive .overview-stats b {
+  color: #e8d7ab;
+}
+.immersive .crew-row:hover,
+.immersive .crew-row.selected,
+.immersive .site-list button:hover,
+.immersive .site-list button.selected {
+  background: #c2b17319;
+}
+.immersive input,
+.immersive select {
+  color: #e9dfbf;
+  background: #0a2227;
+  border-color: #9c94614d;
+}
+.immersive .repair-button {
+  background: #77633a44;
+  color: #e3cb91;
+  border-color: #a78a4844;
+}
+.immersive .need .meter {
+  background: #0a2020;
+}
+.immersive .meter i {
+  background: #b7bc7c;
+}
+.immersive .map-top-left {
+  top: auto;
+  bottom: 137px;
+  left: 24px;
+}
+.immersive .map-top-right {
+  top: 94px;
+  right: 200px;
+}
+.immersive .map-bottom-left,
+.immersive .map-bottom-right {
+  display: none;
+}
+.immersive .toast-stack {
+  bottom: 130px;
+  left: 50%;
+  z-index: 40;
+}
+.immersive .toast {
+  background: #102c2af5;
+  border: 1px solid #a7a27077;
+  color: #eee1b7;
+}
+.immersive .journal {
+  bottom: 145px;
+  left: 90px;
+  background: #112b2bf2;
+  border-color: #b3a06a88;
+}
+.crew-dock {
+  position: fixed;
+  z-index: 14;
+  bottom: 28px;
+  left: 22px;
+  display: flex;
+  gap: 9px;
+}
+.crew-dock button {
+  position: relative;
+  width: 66px;
+  padding: 4px;
+  background: #0b2224e8;
+  border: 1px solid #bba46b99;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px #0006;
+  color: #e9d9af;
+}
+.crew-dock button.chosen {
+  border-color: #ffe6a0;
+  box-shadow: 0 0 15px #d4b36b44;
+}
+.crew-dock strong {
+  font-size: 10px;
+  display: block;
+  padding: 4px 0;
+}
+.portrait {
+  display: block;
+  width: 56px;
+  height: 66px;
+  background: #355149;
+}
+.crew-health {
+  display: block;
+  height: 3px;
+  background: #0b1517;
+}
+.crew-health i {
+  display: block;
+  height: 100%;
+  background: #b9c58c;
+}
+[data-portrait] {
+  background-image: url("/art/crew-atlas.png") !important;
+  background-size: 300% 100% !important;
+  background-repeat: no-repeat !important;
+  color: transparent !important;
+}
+[data-portrait="0"] {
+  background-position: 0% 40% !important;
+}
+[data-portrait="1"] {
+  background-position: 50% 40% !important;
+}
+[data-portrait="2"] {
+  background-position: 100% 40% !important;
+}
+.immersive .welcome-backdrop {
+  background: radial-gradient(ellipse at center, #0b292b66, #020f19ed);
+  backdrop-filter: blur(5px);
+}
+.immersive .welcome-card {
+  background: linear-gradient(145deg, #153d38f5, #0b1e28f8);
+  border: 1px solid #c4a56aaa;
+  box-shadow: 0 25px 150px #000a;
+  color: #eee1bd;
+}
+.immersive .welcome-card h2 {
+  color: #f1e2b9;
+}
+.immersive .welcome-card > p {
+  color: #c1cbb7;
+}
+.immersive .welcome-anchor {
+  color: #d8ba7a;
+}
+.immersive .modal {
+  background: #17332f;
+  color: #e6dbbe;
+  border: 1px solid #c5aa6c88;
+}
+.immersive .modal p {
+  color: #bccbb5;
+}
+@media (min-width: 1700px) {
+  .immersive .resourcebar {
+    top: 22px;
+  }
+  .immersive .resource {
+    min-width: 88px;
+  }
+}
+@media (max-width: 1200px) {
+  .immersive .brand strong {
+    font-size: 17px;
+  }
+  .immersive .brand small,
+  .immersive .connection {
+    display: none;
+  }
+  .immersive .resourcebar {
+    left: 52%;
+  }
+  .immersive .resource {
+    padding: 0 8px;
+    min-width: 58px;
+  }
+  .immersive .construction-bar {
+    left: 50%;
+    max-width: calc(100vw - 300px);
+  }
+  .immersive .build-option {
+    width: 50px;
+  }
+  .crew-dock button {
+    width: 54px;
+  }
+  .portrait {
+    width: 44px;
+    height: 53px;
+  }
+  .immersive .inspector {
+    width: 285px;
+  }
+}
+@media (max-width: 760px) {
+  .immersive .topbar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  .immersive .brand strong {
+    font-size: 17px;
+  }
+  .immersive .top-actions {
+    gap: 4px;
+  }
+  .immersive .resourcebar {
+    top: 76px;
+    left: 50%;
+    width: calc(100vw - 20px);
+    height: 43px;
+  }
+  .immersive .resource-items {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .immersive .resource {
+    min-width: 0;
+    padding: 0 5px;
+  }
+  .immersive .resource b {
+    font-size: 12px;
+  }
+  .immersive .resource small {
+    font-size: 7px;
+  }
+  .immersive .resource > svg {
+    width: 12px;
+  }
+  .immersive .map-heading {
+    top: 132px;
+    left: 12px;
+  }
+  .immersive .map-heading h1 {
+    font-size: 22px;
+  }
+  .immersive .map-heading p {
+    display: none;
+  }
+  .immersive .inspector-toggle {
+    top: 132px;
+    right: 10px;
+    padding: 8px;
+    font-size: 9px;
+  }
+  .inspector-toggle kbd {
+    display: none;
+  }
+  .immersive .rail {
+    left: 10px;
+    top: 215px;
+    width: 44px;
+  }
+  .immersive .rail button {
+    width: 34px;
+    height: 39px;
+  }
+  .immersive .rail button span {
+    display: none;
+  }
+  .immersive .inspector {
+    top: 180px;
+    bottom: 125px;
+    right: 10px;
+    width: 280px;
+  }
+  .immersive .construction-bar {
+    bottom: 12px;
+    left: 10px;
+    transform: none;
+    max-width: calc(100vw - 20px);
+    height: 65px;
+    padding: 4px;
+    width: calc(100vw - 20px);
+  }
+  .immersive .build-options {
+    width: 100%;
+    gap: 0;
+  }
+  .immersive .build-option {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    height: 52px;
+  }
+  .immersive .build-symbol {
+    font-size: 19px;
+  }
+  .immersive .build-name {
+    font-size: 6px;
+  }
+  .immersive .cancel-tool {
+    display: none;
+  }
+  .crew-dock {
+    bottom: 90px;
+    left: 10px;
+  }
+  .crew-dock button {
+    width: 46px;
+  }
+  .portrait {
+    width: 36px;
+    height: 43px;
+  }
+  .immersive .statusbar,
+  .immersive .map-top-right,
+  .immersive .map-top-left {
+    display: none;
+  }
+}
+/* Reference direction: oxidized instrument panels and a persistent survivor roster. */
+.immersive .brand,
+.immersive .resourcebar,
+.immersive .top-actions,
+.immersive .inspector,
+.immersive .crew-dock,
+.immersive .rail,
+.immersive .construction-bar {
+  border: 1px solid #a18653;
+  border-radius: 3px;
+  box-shadow:
+    inset 0 0 0 2px #090f10,
+    inset 0 0 0 3px #83704c55,
+    0 4px 20px #0008;
+  background-image:
+    repeating-linear-gradient(125deg, #a6a69604 0 1px, transparent 1px 4px),
+    linear-gradient(110deg, #182724f5, #111d1ef5);
+}
+.immersive .topbar {
+  top: 8px;
+  left: 10px;
+  right: 10px;
+  height: 58px;
+}
+.immersive .brand {
+  width: 230px;
+  padding: 8px;
+}
+.immersive .brand strong {
+  font-size: 22px;
+}
+.immersive .top-actions {
+  position: absolute;
+  top: 67px;
+  right: 0;
+  padding: 4px 9px;
+  height: 30px;
+}
+.immersive .resourcebar {
+  top: 8px;
+  left: 248px;
+  right: 10px;
+  transform: none;
+  width: auto;
+  height: 58px;
+  padding: 0 10px;
+}
+.immersive .resource-items {
+  width: 100%;
+  justify-content: space-around;
+}
+.immersive .resource {
+  flex: 1;
+  min-width: 0;
+}
+.immersive .resource b {
+  font-size: 16px;
+}
+.immersive .resource small {
+  font-size: 9px;
+}
+.immersive .crew-dock {
+  top: 112px;
+  left: 10px;
+  bottom: 88px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: auto;
+  padding: 4px;
+}
+.roster-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 9px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #e8d7af;
+  border-bottom: 1px solid #a086534d;
+}
+.immersive .crew-dock button {
+  width: 100%;
+  min-height: 109px;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  grid-template-rows: 23px 18px 19px 20px 4px;
+  column-gap: 10px;
+  border: 0;
+  border-bottom: 1px solid #9e885b55;
+  background: #00000012;
+  box-shadow: none;
+  text-align: left;
+  padding: 8px;
+  border-radius: 0;
+}
+.immersive .crew-dock button.chosen {
+  background: #cdb06c19;
+  box-shadow: inset 3px 0 #d6b977;
+}
+.immersive .crew-dock .portrait {
+  grid-column: 1;
+  grid-row: 1/6;
+  width: 72px;
+  height: 88px;
+  border: 1px solid #9b845c;
+}
+.immersive .crew-dock strong {
+  font-size: 12px;
+  padding: 2px 0;
+  grid-column: 2;
+  color: #ebdec2;
+}
+.roster-role,
+.roster-task,
+.roster-health {
+  grid-column: 2;
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #b1c4b0;
+}
+.roster-health {
+  color: #c9bb8e;
+}
+.immersive .crew-health {
+  grid-column: 2;
+  width: 100%;
+}
+.roster-overview {
+  padding: 14px 9px;
+}
+.roster-overview h3 {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  border-bottom: 1px solid #9c845844;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.roster-overview .need {
+  margin: 12px 0;
+}
+.roster-overview .need > span {
+  font-size: 10px;
+  width: 65px;
+  color: #c4c6ad;
+}
+.roster-overview .need > b {
+  font-size: 10px;
+  color: #d6d9bf;
+}
+.roster-overview p {
+  font-size: 10px;
+  display: flex;
+  gap: 5px;
+  color: #a1bda9;
+  margin-top: 18px;
+}
+.immersive .rail {
+  top: auto;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  width: auto;
+  height: 62px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px;
+}
+.immersive .rail > div {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 3px;
+}
+.immersive .rail > div:last-child {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  flex: 0.5;
+}
+.immersive .rail button {
+  flex: 1;
+  width: auto;
+  height: 50px;
+  margin: 0;
+  border: 1px solid #8f794f66;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 2px;
+  background: #272b232b;
+}
+.immersive .rail button span {
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+.immersive .rail button.active {
+  border-color: #6db4aa;
+  background: #1e4a4655;
+  color: #f2dfb4;
+}
+.immersive .map-heading {
+  left: 260px;
+  top: 79px;
+}
+.immersive .map-heading h1 {
+  font-size: 25px;
+}
+.immersive .map-heading .eyebrow {
+  display: none;
+}
+.immersive .inspector {
+  right: 10px;
+  top: 112px;
+  bottom: 90px;
+  width: 300px;
+}
+.immersive .inspector-toggle {
+  top: 77px;
+  right: 330px;
+}
+.immersive .construction-bar {
+  bottom: 86px;
+  left: 255px;
+  right: 325px;
+  transform: none;
+  max-width: none;
+  width: auto;
+  height: 76px;
+  padding: 4px;
+  overflow: auto;
+}
+.immersive .build-options {
+  width: 100%;
+}
+.immersive .build-option {
+  flex: 1;
+  width: auto;
+  min-width: 42px;
+}
+.immersive .cancel-tool {
+  width: 20px;
+}
+.immersive .statusbar {
+  display: none;
+}
+.immersive .map-top-left {
+  left: 260px;
+  bottom: 173px;
+}
+.immersive .map-top-right {
+  display: none;
+}
+.immersive .first-steps {
+  background: #172e2a;
+  border-color: #8b784b66;
+}
+.immersive .first-steps-heading,
+.immersive .objective strong {
+  color: #d6c591;
+}
+.immersive .objective-check {
+  border-color: #9b92635c;
+}
+.immersive .objective.complete .objective-check {
+  background: #687d55;
+  color: #e9dfb5;
+}
+.immersive .toast-stack {
+  left: 50%;
+  bottom: 178px;
+}
+.immersive .journal {
+  left: auto;
+  right: 323px;
+  bottom: 174px;
+  max-width: calc(100vw - 600px);
+}
+.immersive .build-option[data-building="generator"] .build-symbol,
+.immersive .build-option[data-building="workshop"] .build-symbol,
+.immersive .build-option[data-building="foodStation"] .build-symbol,
+.immersive .build-option[data-building="bed"] .build-symbol {
+  background-image: url("/art/buildings-atlas.png");
+  background-size: 200% 200%;
+  width: 36px;
+  height: 35px;
+  font-size: 0;
+  display: block;
+}
+.build-option[data-building="generator"] .build-symbol {
+  background-position: 0 0;
+}
+.build-option[data-building="workshop"] .build-symbol {
+  background-position: 100% 0;
+}
+.build-option[data-building="foodStation"] .build-symbol {
+  background-position: 0 100%;
+}
+.build-option[data-building="bed"] .build-symbol {
+  background-position: 100% 100%;
+}
+@media (max-width: 1000px) {
+  .immersive .crew-dock {
+    width: 185px;
+  }
+  .immersive .crew-dock .portrait {
+    width: 52px;
+    height: 70px;
+  }
+  .immersive .crew-dock button {
+    grid-template-columns: 52px 1fr;
+    column-gap: 6px;
+  }
+  .immersive .construction-bar {
+    left: 205px;
+    right: 20px;
+  }
+  .immersive .map-heading {
+    left: 210px;
+  }
+  .immersive .inspector {
+    width: 275px;
+  }
+  .immersive .resourcebar {
+    left: 210px;
+  }
+  .immersive .brand {
+    width: 192px;
+  }
+  .immersive .rail button {
+    gap: 5px;
+  }
+  .immersive .rail button span {
+    font-size: 11px;
+  }
+}
+@media (max-width: 650px) {
+  .immersive .crew-dock {
+    top: auto;
+    bottom: 157px;
+    height: 95px;
+    width: 178px;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .immersive .crew-dock .roster-heading,
+  .immersive .crew-dock .roster-overview,
+  .immersive .crew-dock .roster-role,
+  .immersive .crew-dock .roster-task,
+  .immersive .crew-dock .roster-health,
+  .immersive .crew-dock .crew-health {
+    display: none;
+  }
+  .immersive .crew-dock button {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    min-height: 0;
+  }
+  .immersive .crew-dock strong {
+    font-size: 8px;
+  }
+  .immersive .crew-dock .portrait {
+    width: 48px;
+    height: 58px;
+  }
+  .immersive .resourcebar {
+    left: 10px;
+    top: 75px;
+    right: 10px;
+    height: 42px;
+    width: auto;
+  }
+  .immersive .top-actions {
+    top: 3px;
+  }
+  .immersive .topbar .connection {
+    display: none;
+  }
+  .immersive .map-heading {
+    top: 130px;
+    left: 15px;
+  }
+  .immersive .inspector-toggle {
+    top: 128px;
+    right: 10px;
+  }
+  .immersive .inspector {
+    top: 175px;
+    bottom: 158px;
+  }
+  .immersive .construction-bar {
+    left: 10px;
+    right: 10px;
+    bottom: 80px;
+    height: 68px;
+  }
+  .immersive .rail {
+    height: 57px;
+  }
+  .immersive .rail button {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .immersive .rail button span {
+    font-size: 8px;
+  }
+  .immersive .map-top-left {
+    display: none;
+  }
+}
+.immersive .brand {
+  min-width: 0;
+  max-width: 230px;
+  flex: 0 0 230px;
+  gap: 6px;
+  overflow: hidden;
+}
+.immersive .brand strong {
+  font-size: 18px;
+  white-space: nowrap;
+}
+.immersive .brand small {
+  font-size: 6px;
+  letter-spacing: 1.5px;
+}
+.immersive .resource-items {
+  max-width: none;
+}
+.immersive .resourcebar .resource {
+  padding: 0 10px;
+}
+@media (max-width: 1000px) {
+  .immersive .brand {
+    flex-basis: 192px;
+    max-width: 192px;
+  }
+  .immersive .brand strong {
+    font-size: 15px;
+  }
+  .immersive .resourcebar .resource {
+    padding: 0 5px;
+  }
+  .immersive .resourcebar .resource small {
+    font-size: 7px;
+  }
+}
+@media (max-width: 650px) {
+  .immersive .brand {
+    flex-basis: 180px;
+  }
+  .immersive .resourcebar .resource {
+    gap: 3px;
+  }
+  .immersive .resourcebar .resource > svg {
+    width: 10px;
+  }
+  .immersive .resourcebar .resource b {
+    font-size: 10px;
+  }
+  .immersive .resourcebar .resource small {
+    font-size: 6px;
+  }
+}

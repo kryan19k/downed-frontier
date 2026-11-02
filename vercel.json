@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "npm ci",
+  "buildCommand": "VITE_GAME_TRANSPORT=http npm run build",
+  "outputDirectory": "apps/web/dist",
+  "functions": {
+    "api/game.ts": { "maxDuration": 30 }
+  }
+}

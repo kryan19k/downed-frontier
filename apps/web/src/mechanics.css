@@ -1,0 +1,468 @@
+.mechanics-panel {
+  color: #e7ddbf;
+  min-width: 0;
+}
+.mechanics-heading {
+  padding: 20px 20px 14px;
+}
+.mechanics-heading h2 {
+  font-size: 27px;
+  margin: 8px 0 10px;
+  line-height: 1.04;
+  color: #f0e2bd;
+}
+.mechanics-heading p,
+.mechanics-note {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #acbead;
+}
+.mechanics-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #af955b44;
+  border-bottom: 1px solid #af955b44;
+  padding: 7px;
+  gap: 4px;
+  background: #091e2055;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.mechanics-tabs button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  padding: 8px 6px;
+  color: #b7c8b1;
+  flex: 1 0 29%;
+  border: 1px solid transparent;
+}
+.mechanics-tabs button.selected {
+  border-color: #b5a16b88;
+  background: #bba66d18;
+  color: #f4dc9b;
+}
+.mechanics-content {
+  padding: 15px 17px 24px;
+}
+.mechanics-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 19px 0 13px;
+  color: #c8b57c;
+}
+.mechanics-section-heading:first-child {
+  margin-top: 0;
+}
+.mechanics-section-heading h3 {
+  font-size: 12px;
+  flex: 1;
+}
+.mechanics-section-heading > span {
+  font-size: 10px;
+}
+.mechanics-gauge {
+  margin: 12px 0;
+}
+.mechanics-gauge > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #bbc9b5;
+  margin-bottom: 6px;
+  gap: 6px;
+}
+.mechanics-gauge strong {
+  font-size: 10px;
+  color: #eadcb4;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.mechanics-bar {
+  display: block;
+  height: 5px;
+  background: #081b1e;
+  border: 1px solid #aa9b5c22;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.mechanics-bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #688c71, #b7bf80);
+  max-width: 100%;
+}
+.mechanics-gauge.warning .mechanics-bar i {
+  background: linear-gradient(90deg, #93633d, #dfb364);
+}
+.mechanics-gauge.warning strong {
+  color: #e7b26d;
+}
+.mechanics-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #a28e5d33;
+  border-bottom: 1px solid #a28e5d33;
+  margin: 16px 0;
+  padding: 12px 0;
+}
+.mechanics-stat-grid > div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.mechanics-stat-grid > div + div {
+  border-left: 1px solid #a28e5d33;
+}
+.mechanics-stat-grid strong {
+  font-size: 17px;
+  color: #dfd2a5;
+}
+.mechanics-stat-grid span {
+  font-size: 9px;
+  color: #9db79f;
+}
+.mechanics-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 8px;
+  color: #bfae77;
+  margin: 13px 0 8px;
+}
+.mechanics-panel select,
+.mechanics-panel input[type="number"] {
+  font-size: 11px;
+  padding: 10px;
+  width: 100%;
+  color: #eee2bf;
+  background: #0c2326;
+  border: 1px solid #aa95634d;
+}
+.mechanics-policy {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  gap: 8px;
+  border-bottom: 1px solid #ae996133;
+  font-size: 10px;
+  color: #decda0;
+}
+.mechanics-policy > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.mechanics-policy strong {
+  font-size: 9px;
+  color: #95b99b;
+}
+.mechanics-card {
+  padding: 13px 11px;
+  margin: 12px 0;
+  border: 1px solid #b09a624a;
+  border-radius: 3px;
+  background: linear-gradient(115deg, #23413a55, #0b202555);
+}
+.mechanics-card-title {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.mechanics-card-title h3 {
+  font-size: 12px;
+  color: #e9ddb8;
+  line-height: 1.35;
+}
+.mechanics-card-title > span {
+  font-size: 7px;
+  color: #bcac7b;
+  letter-spacing: 0.7px;
+  text-align: right;
+  max-width: 90px;
+}
+.mechanics-card p,
+.mechanics-card li {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #adc1ad;
+}
+.mechanics-card h4 {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #c3b17e;
+  margin: 14px 0 8px;
+  letter-spacing: 0.8px;
+}
+.mechanics-action {
+  padding: 9px 8px;
+  border: 1px solid #aa945c66;
+  background: #a7935816;
+  color: #e6cd91;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+.mechanics-action.primary {
+  background: linear-gradient(#a99055, #74603d);
+  color: #fff1cd;
+  border-color: #c9ac70;
+}
+.mechanics-card.complete {
+  border-color: #7b9f6c88;
+}
+.mechanics-card.complete .mechanics-action {
+  color: #9fbf8e;
+}
+.mechanics-goods {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  font-size: 9px;
+  color: #c5c5a5;
+}
+.mechanics-goods > span {
+  padding: 4px 5px;
+  background: #071b1e66;
+  border-radius: 2px;
+  border: 1px solid #9c8c5233;
+}
+.mechanics-recipe {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.mechanics-recipe > .mechanics-goods {
+  flex: 1;
+}
+.mechanics-empty {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #94aa98;
+  padding: 13px 0;
+}
+.mechanics-alert {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  font-size: 10px;
+  border: 1px solid #9bb38055;
+  background: #597d4b22;
+  color: #c3d0ad;
+}
+.mechanics-crew-picker {
+  border: 1px solid #a28a5755;
+  padding: 8px 10px;
+  margin: 14px 0;
+}
+.mechanics-crew-picker legend {
+  font-size: 9px;
+  color: #c2b382;
+  padding: 0 5px;
+}
+.mechanics-crew-picker label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 11px;
+  color: #dfd5b9;
+  padding: 7px 0;
+}
+.mechanics-crew-picker input {
+  width: 14px;
+  height: 14px;
+  accent-color: #b7a063;
+  flex: 0 0 14px;
+}
+.mechanics-crew-picker small {
+  font-size: 8px;
+  color: #9eb39d;
+  display: block;
+  margin-top: 3px;
+}
+.mechanics-site-detail {
+  padding: 12px;
+  background: #081e2255;
+  margin-top: 8px;
+}
+.mechanics-site-detail p {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #b2c4af;
+}
+.mechanics-site-detail > span {
+  font-size: 8px;
+  color: #c4ac72;
+  margin-top: 7px;
+  display: block;
+}
+.mechanics-inline-actions {
+  display: flex;
+  gap: 6px;
+}
+.mechanics-inline-actions > * {
+  flex: 1;
+}
+.mechanics-card details {
+  font-size: 10px;
+  color: #d4c593;
+  margin-top: 12px;
+  border-top: 1px solid #aa915433;
+  padding-top: 9px;
+}
+.mechanics-card summary {
+  cursor: pointer;
+}
+.mechanics-party-log {
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+.mechanics-traits {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.mechanics-traits span {
+  font-size: 8px;
+  padding: 4px 7px;
+  border: 1px solid #b8a16255;
+  background: #c0a16c13;
+  color: #d6c28e;
+  border-radius: 12px;
+}
+.mechanics-injury {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #d9b38b !important;
+}
+.mechanics-card ul {
+  padding-left: 15px;
+}
+.mechanics-card .positive {
+  color: #a9c68a;
+}
+.mechanics-card .negative {
+  color: #ddaa80;
+}
+.mechanics-skill-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 10px 0;
+}
+.mechanics-skill-list > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 9px;
+  color: #aabb9e;
+}
+.mechanics-panel .mechanics-card-title button {
+  padding: 0;
+  color: #c8b683;
+}
+.immersive .inspector.frontier-inspector .inspector-scroll {
+  padding: 0;
+}
+.immersive .inspector.frontier-inspector {
+  width: 340px;
+}
+.immersive .rail .frontier-nav-button {
+  color: #e0c58b;
+}
+.tactical-return {
+  position: absolute;
+  top: 130px;
+  left: 260px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #c1a36799;
+  background: #102b2bec;
+  color: #e9d6a6;
+  font-size: 11px;
+  border-radius: 3px;
+}
+.immersive .build-options {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8f8154 transparent;
+}
+.immersive .build-options .build-option {
+  flex: 0 0 54px;
+}
+.immersive .construction-bar {
+  overflow-y: hidden;
+}
+.mechanics-away {
+  font-size: 8px;
+  color: #d2b375;
+}
+.immersive .crew-dock button.away {
+  opacity: 0.65;
+}
+@media (max-width: 1000px) {
+  .immersive .inspector.frontier-inspector {
+    width: 300px;
+  }
+  .immersive .rail button span {
+    font-size: 10px;
+  }
+}
+@media (max-width: 650px) {
+  .immersive .inspector.frontier-inspector {
+    width: min(310px, calc(100vw - 24px));
+  }
+  .tactical-return {
+    left: 12px;
+    top: 180px;
+  }
+  .mechanics-heading {
+    padding: 16px;
+  }
+  .mechanics-heading h2 {
+    font-size: 23px;
+  }
+  .mechanics-content {
+    padding: 12px;
+  }
+  .immersive .build-options .build-option {
+    flex-basis: 45px;
+  }
+}
+.immersive .toast-stack {
+  top: 80px;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  pointer-events: none;
+}
+.immersive .toast {
+  padding: 9px 12px;
+  font-size: 10px;
+  box-shadow: 0 4px 16px #0007;
+}
+.immersive .toast.error {
+  border-color: #ce9672;
+}
