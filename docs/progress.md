@@ -54,3 +54,11 @@ Storage remains atomic local JSON with success receipts committed before command
 ## Next work
 
 Use the mechanics matrix and backlog to continue missing depth and content. Do not report the whole game complete until its outstanding gameplay, operational and verification requirements are actually met.
+
+## GitHub and desktop delivery
+
+Source is pushed to the user-created public repository https://github.com/kryan19k/downed-frontier (repository spelling is intentional). The initial GitHub Actions Verify workflow passed. Windows desktop continuation instructions and task context are in CODEX_HANDOFF.md.
+
+Hosted adaptation is prepared in vercel.json, api/game.ts and the Redis compare-and-swap/HTTP transport modules. Local unit coverage is now 115 passing tests; TypeScript, build, and both normal browser scenarios pass. Real Upstash storage and live Vercel execution have NOT been verified. Vercel team authorization remains missing; no live deployment has been confirmed.
+
+The Windows local server skips unsupported directory fsync while retaining file flush and atomic rename. Actual native Windows gameplay still needs verification in the desktop environment.

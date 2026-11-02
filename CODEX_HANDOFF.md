@@ -47,7 +47,7 @@ npm.cmd run verify
 
 This runs unit/server tests, builds, and both browser scenarios. Playwright needs Chromium; if no installed compatible browser is found, run `npx.cmd playwright install chromium` first. Set `CHROMIUM_PATH` only if selecting a known browser executable. The tests use isolated temporary worlds and do not reset the normal save.
 
-The mechanics expansion passed 92tests and two Chromium browser scenarios. The pending hosted adapter raises current unit coverage to 115tests. It has passed local checks but has NOT been verified on a live Vercel deployment or real Redis service.
+The mechanics expansion passed 92 tests and two Chromium browser scenarios. The pending hosted adapter raises current unit coverage to 115 tests. It has passed local checks but has NOT been verified on a live Vercel deployment or real Redis service.
 
 ## Publishing status and access blockers
 
@@ -55,7 +55,7 @@ The connected GitHub user is `kryan19k`. The user created and explicitly identif
 
 Vercel login is connected, but listing teams returns empty and accessing the user's default team returns 403. Native team authorization must be completed by the user through a fresh `authorize_team_access` link. A login alone is insufficient; expired links must be refreshed. Do not work around the denial by selecting another account or token.
 
-Vercel project import and live deployment have not been confirmed yet. Do not claim otherwise; use native service results to verify publication. GitHub synchronization status is visible in the local repository and remote.
+Vercel project import and live deployment have not been confirmed yet. Do not claim otherwise; use native service results to verify publication. The game source has been pushed to main on the verified GitHub remote. The initial GitHub Actions Verify workflow passed. Synchronization status is visible in git.
 
 ## Hosted adaptation already prepared
 

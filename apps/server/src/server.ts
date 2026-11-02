@@ -506,12 +506,15 @@ export async function createGameServer(
       closeSync(fd);
     }
     renameSync(temporary, savePath);
-    // Directory fsync makes the rename durable on supported local filesystems.
-    const directory = openSync(dirname(savePath), "r");
-    try {
-      fsyncSync(directory);
-    } finally {
-      closeSync(directory);
+    // POSIX directory fsync makes the rename durable. Windows does not expose
+    // directory fsync through Node: the file is flushed before atomic rename.
+    if (process.platform !== "win32") {
+      const directory = openSync(dirname(savePath), "r");
+      try {
+        fsyncSync(directory);
+      } finally {
+        closeSync(directory);
+      }
     }
   }
   function send(ws: WebSocket, message: ServerMessage) {
